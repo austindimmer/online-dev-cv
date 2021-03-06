@@ -25,8 +25,8 @@ export const getMainDetails = /* GraphQL */ `
     }
   }
 `;
-export const listMainDetailss = /* GraphQL */ `
-  query ListMainDetailss(
+export const listMainDetails = /* GraphQL */ `
+  query ListMainDetails(
     $filter: ModelMainDetailsFilterInput
     $limit: Int
     $nextToken: String

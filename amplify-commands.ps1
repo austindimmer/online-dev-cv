@@ -67,5 +67,6 @@ amplify aws reset-cache
 
 
 amplify add api
+amplify update api
 amplify add codegen --apiId mi3aw4ab6vdrjpsfrombyj46a4
 amplify codegen
