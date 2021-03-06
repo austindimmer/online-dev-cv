@@ -31,7 +31,7 @@ export const listMainDetails = /* GraphQL */ `
     $limit: Int
     $nextToken: String
   ) {
-    listMainDetailss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMainDetails(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
