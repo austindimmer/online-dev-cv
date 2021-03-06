@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { API } from 'aws-amplify';
-import { listMainDetails } from '../graphql/queries'
+import { listMainDetailss } from '../graphql/queries'
 
 export default function Home() {
   let [mainDetails, setListMainDetails] = useState(null);
@@ -14,7 +14,7 @@ export default function Home() {
   
   async function fetchListMainDetailss() {
     const mainDetails = await API.graphql({
-      query: listMainDetails
+      query: listMainDetailss
     });
     setIsLoading(false);
     setListMainDetails(mainDetails.data.listMainDetailss.items[0]);

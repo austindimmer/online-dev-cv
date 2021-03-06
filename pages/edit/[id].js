@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import { useRouter } from 'next/router';
-import { getMainDetails, listMainDetails } from '../../graphql/queries';
+import { getMainDetails, listMainDetailss } from '../../graphql/queries';
 import { updateMainDetails } from '../../graphql/mutations';
 import SkillsUpdate from '../../components/skillsUpdate';
 
@@ -139,7 +139,7 @@ const UpdateDetails = ({ mainDetails }) => {
 
 export async function getStaticPaths() {
   const postMainDetails = await API.graphql({
-    query: listMainDetails,
+    query: listMainDetailss,
   });
   const paths = postMainDetails.data.listMainDetailss.items.map(post => ({ params: { id: post.id }}))
   return {
