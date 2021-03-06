@@ -25,13 +25,13 @@ export const getMainDetails = /* GraphQL */ `
     }
   }
 `;
-export const listMainDetails = /* GraphQL */ `
-  query ListMainDetails(
+export const listMainDetailss = /* GraphQL */ `
+  query ListMainDetailss(
     $filter: ModelMainDetailsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listMainDetails(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMainDetailss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
