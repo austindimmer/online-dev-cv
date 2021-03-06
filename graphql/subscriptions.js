@@ -87,14 +87,13 @@ export const onCreateSkill = /* GraphQL */ `
         location
         description
         skills {
-          items {
-            id
-            name
-            skillID
-          }
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;

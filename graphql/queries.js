@@ -20,10 +20,12 @@ export const getMainDetails = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const listMainDetails = /* GraphQL */ `
+export const listMainDetailss = /* GraphQL */ `
   query ListMainDetailss(
     $filter: ModelMainDetailsFilterInput
     $limit: Int
@@ -38,10 +40,7 @@ export const listMainDetails = /* GraphQL */ `
         location
         description
         skills {
-          items{
-            name
-            id
-          }
+          nextToken
         }
         createdAt
         updatedAt

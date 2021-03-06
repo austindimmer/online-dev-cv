@@ -1,0 +1,634 @@
+/* tslint:disable */
+/* eslint-disable */
+//  This file was automatically generated and should not be edited.
+
+export type CreateMainDetailsInput = {
+  id?: string | null,
+  name: string,
+  lastName: string,
+  email: string,
+  location?: string | null,
+  description?: string | null,
+};
+
+export type ModelMainDetailsConditionInput = {
+  name?: ModelStringInput | null,
+  lastName?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  location?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelMainDetailsConditionInput | null > | null,
+  or?: Array< ModelMainDetailsConditionInput | null > | null,
+  not?: ModelMainDetailsConditionInput | null,
+};
+
+export type ModelStringInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+  size?: ModelSizeInput | null,
+};
+
+export enum ModelAttributeTypes {
+  binary = "binary",
+  binarySet = "binarySet",
+  bool = "bool",
+  list = "list",
+  map = "map",
+  number = "number",
+  numberSet = "numberSet",
+  string = "string",
+  stringSet = "stringSet",
+  _null = "_null",
+}
+
+
+export type ModelSizeInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+};
+
+export type MainDetails = {
+  __typename: "MainDetails",
+  id?: string,
+  name?: string,
+  lastName?: string,
+  email?: string,
+  location?: string | null,
+  description?: string | null,
+  skills?: ModelSkillConnection,
+  createdAt?: string,
+  updatedAt?: string,
+};
+
+export type ModelSkillConnection = {
+  __typename: "ModelSkillConnection",
+  items?:  Array<Skill | null > | null,
+  nextToken?: string | null,
+};
+
+export type Skill = {
+  __typename: "Skill",
+  id?: string,
+  name?: string,
+  skillID?: string,
+  mainDetails?: MainDetails,
+  createdAt?: string,
+  updatedAt?: string,
+};
+
+export type UpdateMainDetailsInput = {
+  id: string,
+  name?: string | null,
+  lastName?: string | null,
+  email?: string | null,
+  location?: string | null,
+  description?: string | null,
+};
+
+export type DeleteMainDetailsInput = {
+  id?: string | null,
+};
+
+export type CreateSkillInput = {
+  id?: string | null,
+  name: string,
+  skillID: string,
+};
+
+export type ModelSkillConditionInput = {
+  name?: ModelStringInput | null,
+  skillID?: ModelIDInput | null,
+  and?: Array< ModelSkillConditionInput | null > | null,
+  or?: Array< ModelSkillConditionInput | null > | null,
+  not?: ModelSkillConditionInput | null,
+};
+
+export type ModelIDInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+  size?: ModelSizeInput | null,
+};
+
+export type UpdateSkillInput = {
+  id: string,
+  name?: string | null,
+  skillID?: string | null,
+};
+
+export type DeleteSkillInput = {
+  id?: string | null,
+};
+
+export type ModelMainDetailsFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  lastName?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  location?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelMainDetailsFilterInput | null > | null,
+  or?: Array< ModelMainDetailsFilterInput | null > | null,
+  not?: ModelMainDetailsFilterInput | null,
+};
+
+export type ModelMainDetailsConnection = {
+  __typename: "ModelMainDetailsConnection",
+  items?:  Array<MainDetails | null > | null,
+  nextToken?: string | null,
+};
+
+export type ModelSkillFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  skillID?: ModelIDInput | null,
+  and?: Array< ModelSkillFilterInput | null > | null,
+  or?: Array< ModelSkillFilterInput | null > | null,
+  not?: ModelSkillFilterInput | null,
+};
+
+export type CreateMainDetailsMutationVariables = {
+  input?: CreateMainDetailsInput,
+  condition?: ModelMainDetailsConditionInput | null,
+};
+
+export type CreateMainDetailsMutation = {
+  createMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateMainDetailsMutationVariables = {
+  input?: UpdateMainDetailsInput,
+  condition?: ModelMainDetailsConditionInput | null,
+};
+
+export type UpdateMainDetailsMutation = {
+  updateMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteMainDetailsMutationVariables = {
+  input?: DeleteMainDetailsInput,
+  condition?: ModelMainDetailsConditionInput | null,
+};
+
+export type DeleteMainDetailsMutation = {
+  deleteMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateSkillMutationVariables = {
+  input?: CreateSkillInput,
+  condition?: ModelSkillConditionInput | null,
+};
+
+export type CreateSkillMutation = {
+  createSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateSkillMutationVariables = {
+  input?: UpdateSkillInput,
+  condition?: ModelSkillConditionInput | null,
+};
+
+export type UpdateSkillMutation = {
+  updateSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteSkillMutationVariables = {
+  input?: DeleteSkillInput,
+  condition?: ModelSkillConditionInput | null,
+};
+
+export type DeleteSkillMutation = {
+  deleteSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type GetMainDetailsQueryVariables = {
+  id?: string,
+};
+
+export type GetMainDetailsQuery = {
+  getMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListMainDetailssQueryVariables = {
+  filter?: ModelMainDetailsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListMainDetailssQuery = {
+  listMainDetailss?:  {
+    __typename: "ModelMainDetailsConnection",
+    items?:  Array< {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetSkillQueryVariables = {
+  id?: string,
+};
+
+export type GetSkillQuery = {
+  getSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListSkillsQueryVariables = {
+  filter?: ModelSkillFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListSkillsQuery = {
+  listSkills?:  {
+    __typename: "ModelSkillConnection",
+    items?:  Array< {
+      __typename: "Skill",
+      id: string,
+      name: string,
+      skillID: string,
+      mainDetails?:  {
+        __typename: "MainDetails",
+        id: string,
+        name: string,
+        lastName: string,
+        email: string,
+        location?: string | null,
+        description?: string | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type OnCreateMainDetailsSubscription = {
+  onCreateMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateMainDetailsSubscription = {
+  onUpdateMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteMainDetailsSubscription = {
+  onDeleteMainDetails?:  {
+    __typename: "MainDetails",
+    id: string,
+    name: string,
+    lastName: string,
+    email: string,
+    location?: string | null,
+    description?: string | null,
+    skills?:  {
+      __typename: "ModelSkillConnection",
+      items?:  Array< {
+        __typename: "Skill",
+        id: string,
+        name: string,
+        skillID: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateSkillSubscription = {
+  onCreateSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateSkillSubscription = {
+  onUpdateSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteSkillSubscription = {
+  onDeleteSkill?:  {
+    __typename: "Skill",
+    id: string,
+    name: string,
+    skillID: string,
+    mainDetails?:  {
+      __typename: "MainDetails",
+      id: string,
+      name: string,
+      lastName: string,
+      email: string,
+      location?: string | null,
+      description?: string | null,
+      skills?:  {
+        __typename: "ModelSkillConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
